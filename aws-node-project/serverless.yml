@@ -1,0 +1,18 @@
+service: aws-node-project
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  profile: ct-infra-admin
+
+# package:
+#   artifact: s3://ct-test-serverless/lambda-${env:GITHUB_SHA}.zip
+
+functions:
+  hello:
+    handler: handler.hello
+    # environment:
+    #   PASSWORD_ITERATIONS: 4096
+    #   PASSWORD_DERIVED_KEY_LENGTH: 256
